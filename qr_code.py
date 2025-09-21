@@ -1,0 +1,12 @@
+import qrcode
+website_link=input("Enter your website link: ")
+version=int(input("Enter QR version (1-40): "))
+box_size=int(input("Enter box size:"))
+border=int(input("Enter border size:"))
+fill=input("Enter fill color:")
+back_color=input("Enter back color:")
+qr=qrcode.QRCode(version=version,box_size=box_size,border=border)
+qr.add_data(website_link)
+qr.make()
+img=qr.make_image(fill=fill,back_color=back_color)
+img.save('youtube_qr.png')
